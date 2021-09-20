@@ -17,3 +17,45 @@ Les règles :
 * Cloner le dépôt : `git clone https://github.com/GBO-Org/epsi-br`
 * Gérer les branches : https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository
 
+
+## La démo
+Notre poste possède le client Git et est configuré comme indiqué dans la [documentation plus haut](https://docs.github.com/en/get-started/quickstart/set-up-git#setting-up-git).
+
+```sh
+ $ git clone https://github.com/GBO-Org/epsi-br-2022.git
+Cloning into 'epsi-br-2022'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 23 (delta 0), reused 23 (delta 0), pack-reused 0
+Receiving objects: 100% (23/23), 6.40 KiB | 3.20 MiB/s, done.
+
+ $ cd epsi-br-2022
+ 
+ $ git config user.name GBO
+ 
+ $ git config user.email "ghislain.bouchet@gmail.com"
+ 
+ $ vi README.md
+ 
+ $ git add README.md
+ 
+ $ git commit -m"Test commit"
+[master 9ff8dcd] Test commit
+ 1 file changed, 2 insertions(+)
+ 
+ $ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 289 bytes | 289.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/GBO-Org/epsi-br-2022.git
+   c758684..9ff8dcd  master -> master
+```
+
+## Synchronisaiton avec la branche master
+
+*A VENIR*
