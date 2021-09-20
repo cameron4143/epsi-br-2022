@@ -18,4 +18,3 @@ Quelques sources d'exercices en supplément :
 * [includehelp.com](https://www.includehelp.com/cpp-programming-examples-solved-cpp-programs.aspx)
 * [cppforschool.com](http://www.cppforschool.com/index.html)
 
-
