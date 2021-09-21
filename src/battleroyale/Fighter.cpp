@@ -32,9 +32,20 @@ int Fighter::getY() { return this->y; }
 void Fighter::display() { this->display(""); }
 void Fighter::display(string message) {
     cout << this->name
-        << "("
+        << " ("
         << this->attack << "/"
         << this->defense << "/"
-        << this->speed << ") ["
+        << this->speed << ") ("
+        << this->x << "x"
+        << this->y << ") ["
         << this->life << "]" << message << endl;
+}
+
+bool Fighter::isHere(int x, int y) {
+    return (this->x == x && this->y == y);
+}
+
+void Fighter::moveTo(int x, int y) {
+    this->x = x;
+    this->y = y;
 }

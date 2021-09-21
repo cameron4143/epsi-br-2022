@@ -38,6 +38,12 @@ public:
     /** Affichage */
     void display();
     void display(string message);
+
+    /** Teste sur la position */
+    bool isHere(int x, int y);
+
+    /** Déplacer le Fighter */
+    void moveTo(int x, int y);
 };
 
 #endif //BATTLEROYALE_FIGHTER_H
