@@ -4,6 +4,6 @@
 
 using namespace std;
 
-Ghislain::Ghislain() {
+Ghislain::Ghislain() : Fighter("Ghislain", 9, 10, 11) {
     cout << "Je suis Ghislain !!" << endl;
 }

@@ -11,10 +11,15 @@ int main()
 {
     cout << "Battle Royale 2022" << endl;
 
+    Ghislain* ghislain = new Ghislain;
+    ghislain->display();
+    ghislain->display(" est content :)");
+
+
     BattleRoyale* br = new BattleRoyale;
 
 
-    br->recruit(new Ghislain);
+    br->recruit(ghislain);
 
     br->run();
 
