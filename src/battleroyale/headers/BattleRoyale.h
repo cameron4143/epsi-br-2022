@@ -5,13 +5,13 @@
 #include <vector>
 
 #include "Arena.h"
-#include "Fighter.h"
+#include "FighterBot.h"
 
 using namespace std;
 
 class BattleRoyale {
 private:
-    vector<Fighter*> fighters;
+    vector<FighterBot*> fighters;
     int size;
     Arena* arena;
 
@@ -22,7 +22,7 @@ public:
     /** Accesseurs */
     Arena getArena();
 
-    void recruit(Fighter* fighter);
+    void recruit(FighterBot* fighter);
     int nbFighterAlive();
 
     void run();

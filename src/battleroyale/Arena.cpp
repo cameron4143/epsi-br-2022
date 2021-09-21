@@ -9,6 +9,9 @@ Arena::Arena(int width, int height) {
     this->height = height;
 }
 
+int Arena::getWidth() { return this->width; }
+int Arena::getHeight() { return this->height; }
+
 
 void Arena::add(Fighter* fighter) {
     fighters.push_back(fighter);

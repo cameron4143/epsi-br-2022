@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 
+#include "Action.h"
 #include "BattleRoyale.h"
 #include "Fighter.h"
 
@@ -18,7 +19,7 @@ BattleRoyale::~BattleRoyale() {
 Arena BattleRoyale::getArena() { return (*this->arena); }
 
 
-void BattleRoyale::recruit(Fighter* fighter) {
+void BattleRoyale::recruit(FighterBot* fighter) {
     fighter->moveTo(rand() % this->size, rand() % this->size);
     this->arena->add(fighter);
     this->fighters.push_back(fighter);
@@ -46,6 +47,20 @@ int BattleRoyale::nbFighterAlive() {
 }
 
 void BattleRoyale::runRound() {
+    Action* choice;
+    FighterBot* fighter;
+    for (int i = 0; i < this->fighters.size(); i++) {
+        fighter = this->fighters[i];
+        choice = fighter->choose(this->getArena());
+        fighter->display(" choisit " + choice->getName());
 
+        // Controle du choix
+        if (choice->isValid(fighter, this->getArena())) {
+            // Execution du choix
+            choice->perform(fighter);
+        } else {
+            cout << "Action interdite !!" << endl;
+        }
+    }
 }
 

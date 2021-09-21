@@ -24,7 +24,7 @@ int main()
     ghislain2->moveTo(2, 2);
     ghislain2->display();
 
-    BattleRoyale* br = new BattleRoyale(3);
+    BattleRoyale* br = new BattleRoyale(10);
     br->recruit(ghislain1);
     br->recruit(ghislain2);
     br->run();

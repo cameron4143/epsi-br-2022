@@ -17,6 +17,9 @@ private:
 public:
     Arena(int width, int height);
 
+    int getWidth();
+    int getHeight();
+
     void add(Fighter* fighter);
 
     void display();

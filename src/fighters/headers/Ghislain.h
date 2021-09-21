@@ -3,13 +3,15 @@
 
 #include <iostream>
 
-#include "Fighter.h"
+#include "FighterBot.h"
 
 using namespace std;
 
-class Ghislain: public Fighter {
+class Ghislain: public FighterBot {
 public:
     Ghislain();
+
+    virtual Action* choose(Arena arena);
 };
 
 #endif //FIGHTERS_GHISLAIN_H
