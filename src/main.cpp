@@ -6,7 +6,10 @@
 #include "Arena.h"
 #include "BattleRoyale.h"
 
+#include "Dumb.h"
 #include "Ghislain.h"
+#include "Humain.h"
+#include "log.h"
 
 using namespace std;
 
@@ -16,33 +19,41 @@ int main()
 
     cout << "Battle Royale 2022" << endl;
 
-    Ghislain* ghislain1 = new Ghislain;
-    ghislain1->moveTo(1, 1);
-    ghislain1->display();
+    BattleRoyale* b;
+    int nbTest = 1;
+    int nbBot = 1;
 
-    Ghislain* ghislain2 = new Ghislain;
-    ghislain2->moveTo(2, 2);
-    ghislain2->display();
+    log("Combien de tours ? ", GREEN);
+    cin >> nbTest;
+    logln("");
+    log("Combien de chaque bot ? ", GREEN);
+    cin >> nbBot;
+    logln("");
+    logln("");
 
-    BattleRoyale* br = new BattleRoyale(10);
-    br->recruit(ghislain1);
-    br->recruit(ghislain2);
-    br->run();
+    int nbHumain = 0;
+    int nbGhislain = 0;
+    int nbDumb = 0;
+    BattleRoyale* br;
 
-/*
+    for (int i = 0; i < nbTest; i++) {
+        br = new BattleRoyale(10, 100, nbTest == 1);
+        for (int j = 0; j < nbBot; j++) {
+            // if (nbTest == 1) { br->recruit(new Humain); }
+            br->recruit(new Ghislain);
+            br->recruit(new Dumb);
+        }
+        br->run();
 
-    Arena* arena = new Arena(10, 10);
-    arena->add(ghislain1);
-    arena->add(ghislain2);
+        if (br->getWinner()->getName() == "Ghislain") { nbGhislain++; }
+        if (br->getWinner()->getName() == "Dumb") { nbDumb++; }
+    }
 
-    arena->display();
+    logln("");
+    logln("");
+    logln("");
+    logln("Ghislain = " + to_string(nbGhislain), GREEN);
+    logln("Dumb = " + to_string(nbDumb), GREEN);
 
-    BattleRoyale* br = new BattleRoyale;
-
-
-    br->recruit(ghislain);
-
-    br->run();
-*/
     return 0;
 }

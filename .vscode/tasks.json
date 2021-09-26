@@ -25,6 +25,7 @@
 			"type": "shell",
 			"command": "g++",
 			"args": [
+				"-std=c++11",
 				"-I${workspaceFolder}/src/battleroyale/headers",
 				"-I${workspaceFolder}/src/fighters/headers",
 				"-g",

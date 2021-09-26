@@ -1,5 +1,5 @@
-#ifndef BATTLEROYALE_ACTIONMOVE_H
-#define BATTLEROYALE_ACTIONMOVE_H
+#ifndef BATTLEROYALE_ACTIONATTACK_H
+#define BATTLEROYALE_ACTIONATTACK_H
 
 #include <iostream>
 #include <vector>
@@ -8,15 +8,26 @@
 
 using namespace std;
 
+/** ActionAttack
+ * Attaquer un Fighter
+ **/
 class ActionAttack : public Action {
 private:
+    /** Stockage interne du fighter pris pour cible */
     Fighter* target;
+    string targetId;
+    string targetName;
 
 public:
-    ActionAttack(Fighter* target);
+    /** Constructeur avec fighter en paramètre */
+    ActionAttack(Fighter fighter);
 
-    virtual bool isValid(Fighter* fighter, Arena arena);
-    virtual void perform(Fighter* fighter);
+    /** On redéfinit l'affichage */
+    virtual string getDisplay();
+
+    /** On implémente les méthodes abstraites */
+    virtual bool isValid();
+    virtual void perform();
 };
 
-#endif //BATTLEROYALE_ACTIONMOVE_H
+#endif //BATTLEROYALE_ACTIONATTACK_H

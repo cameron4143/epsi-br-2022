@@ -8,6 +8,11 @@
 using namespace std;
 
 class Ghislain: public FighterBot {
+private:
+    string targetId;
+
+    Fighter selectTarget(Arena arena);
+
 public:
     Ghislain();
 

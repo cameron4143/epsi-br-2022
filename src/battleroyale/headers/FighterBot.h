@@ -9,14 +9,22 @@
 
 using namespace std;
 
+/** FighterBot abstrait
+ * Déclinaison du Fighter qui peur prendre des décisions */
 class FighterBot : public Fighter {
+private:
+    /** Le round de KO */
+    int koRound;
 
 public:
     /** Constructeur */
     FighterBot(string name, int attack, int defense, int speed);
 
-    /** Accesseurs publics */
-    string getName();
+    /** Accesseurs (getters) / mutateurs (setters) */
+    int getKoRound();
+    void setKoRound(int koRound);
+
+    /** Méthode abstraite de choix de l'action */
     virtual Action* choose(Arena arena) = 0;
 };
 
