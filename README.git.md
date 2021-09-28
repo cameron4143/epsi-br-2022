@@ -4,8 +4,9 @@
 
 Les liens :
 * L'organisation : https://github.com/GBO-Org
-* La team : https://github.com/orgs/GBO-Org/teams/epsi-b2-2022
 * Le projet : https://github.com/GBO-Org/epsi-br
+
+Pour rejoindre l'organisation, il faut faire un mail à ghislain.bouchet@gmail.com en indiquant l'URL de son user GitHub (comme https://github.com/GBO par exemple).
 
 Les règles :
 * Une branche par développeur tirée depuis le master (piloté par Ghislain) et rebasée régulièrement : `student/VOTRE_NOM_DE_FAMILLE`
