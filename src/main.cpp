@@ -6,6 +6,7 @@
 #include "Arena.h"
 #include "BattleRoyale.h"
 
+#include "Cam.h"
 #include "Dumb.h"
 #include "Ghislain.h"
 #include "Humain.h"
@@ -15,6 +16,7 @@ using namespace std;
 
 int main()
 {
+    loginit();
     srand(time(NULL));
 
     cout << "Battle Royale 2022" << endl;
@@ -34,6 +36,7 @@ int main()
     int nbHumain = 0;
     int nbGhislain = 0;
     int nbDumb = 0;
+    int nbCam = 0;
     BattleRoyale* br;
 
     for (int i = 0; i < nbTest; i++) {
@@ -42,11 +45,13 @@ int main()
             // if (nbTest == 1) { br->recruit(new Humain); }
             br->recruit(new Ghislain);
             br->recruit(new Dumb);
+            br->recruit(new Cam);
         }
         br->run();
 
         if (br->getWinner()->getName() == "Ghislain") { nbGhislain++; }
         if (br->getWinner()->getName() == "Dumb") { nbDumb++; }
+        if (br->getWinner()->getName() == "Cam") { nbCam++; }
     }
 
     logln("");
@@ -54,6 +59,7 @@ int main()
     logln("");
     logln("Ghislain = " + to_string(nbGhislain), GREEN);
     logln("Dumb = " + to_string(nbDumb), GREEN);
+    logln("Cam = " + to_string(nbCam), RED);
 
     return 0;
 }
